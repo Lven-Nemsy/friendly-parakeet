@@ -19,7 +19,7 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword () {
   //Password length is between 8-128, including conditions for number to be in the right range.
-  var passwordLength = prompt ("How many characters you want in your password? (min 8 - max 128)");
+  var passwordLength = Number(prompt ("How many characters you want in your password? (min 8 - max 128)"));
   if (passwordLength < 8){
     window.alert ("Password must be more than 8 characters.");
     prompt ("How many characters you want in your password? (min 8 - max 128)");
@@ -30,7 +30,7 @@ function generatePassword () {
     window.alert ("Select a valid number between 8 and 128.");
     prompt ("How many characters you want in your password? (min 8 - max 128)");
   }
- const passLength = parseInt(passwordLength.value);
+  const passLength = parseInt(passwordLength);
 
 
 //Does the user want lowercase, uppercase, numerics, and/or special characters?
@@ -51,36 +51,49 @@ function generatePassword () {
     window.alert ("Password criteria has not been met.");
   };
 
-  {const lowercase = "abcdefghijklmnopqrstuvwxyz";
-    function getRandomLower (){
-      let randomlower = "";
-      const lowerlength = lowercase.length;
-      for (let i = 0; i < length; i++){
-        randomlower =+ lowercase[Math.floor(Math.random()) * lowercase.length];
-       }
-    return randomlower;}
-  }
-  {const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    function getRandomUpper (){
-      return uppercase[Math.floor(Math.random()) * uppercase.length];
-    }}
-  {const numerics = "0123456789";
-    function getRandomNumerics (){
-      return numerics[Math.floor(Math.random()) * numerics.length];
-     }}
-  {const special = "!@#$%^&*~=+;:,'/?"
-    function getRandomSpecial (){
-      return special[Math.floor(Math.random()) * special.length];
-     }}
 
+//Randomizing the password
+  const lowercase = "abcdefghijklmnopqrstuvwxyz";
+    let randomLower = "";
+    for ( let i = 0; i < passLength; i++);{
+      randomLower = lowercase.charAt(Math.floor(Math.random(26)) * lowercase.length);
+    }
+    console.log(randomLower)
 
-// Repeat function as many characters as chosen
+   // return randomLower += lowercase.substring(passLength) 
+
+  const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    let randomUpper = "";
+    for ( let i = 0; i < passLength; i++);{
+      randomUpper += uppercase.charAt(Math.floor(Math.random()) * uppercase.length);
+    }
+    console.log(randomUpper)
+
+  const numerics = "0123456789";
+    let randomNumerics = "";
+    for ( let i = 0; i < passLength; i++);{
+      randomNumerics += numerics.charAt(Math.floor(Math.random()) * numerics.length);
+    }
+    console.log(randomNumerics)
+    
+  const special = "!@#$%^&*~=+;:,'/?"
+    let randomSpecial = "";
+    for ( let i = 0; i < passLength; i++);{
+      randomSpecial += special.charAt(Math.floor(Math.random()) * special.length);
+    }
+    console.log(randomSpecial)
+
+// return randomLower+randomUpper+randomNumerics+randomSpecial
+
+//}  
+// Repeat function for as many characters as chosen - combine the random charcters into a single password
 
 let password = "";
 for (let i = 0; i <= password.length; i++){
- let password = Math.floor (Math.random()) * (getRandomLower+getRandomUpper+getRandomNumerics+getRandomSpecial);
-  //console.log(lowercase,uppercase,numerics,special[password])
-}
+  let password = Math.floor (Math.random()) * (randomLower+randomUpper+randomNumerics+randomSpecial);
+  }
+console.log(password)
+
 return password;
 }
 
