@@ -6,7 +6,7 @@ This Password Generator was created to work and practice on Javascript.
 - What was your motivation? To improve myself.
 - Why did you build this project? To understand the for loops and random better.
 - What problem does it solve? It generates a password randomly based on selected criteria.
-- What did you learn? How complicated a simple thing as a password generator can be! I'm still havcing difficulty with looping.
+- What did you learn? How complicated a simple thing as a password generator can be! I'm still having difficulty with looping.
 
 ## Installation
 
@@ -19,7 +19,7 @@ To use this Password Generator click on 'Generate Password'. Prompts and comfirm
 
 ## Credits
 
-N/A
+Troubleshooted with Kyle Jocoy.
 
 ## License
 
